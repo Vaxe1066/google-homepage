@@ -3,7 +3,6 @@
     <head>
        <link rel="shortcut icon" href="google-icon.svg">
         <title>Google</title>
-
     </head>
 
     <style>
@@ -13,24 +12,41 @@
         }
 
 
-        body{
+        .wrapper{
             display: grid;
             width: 100%;
             height: 100%;
-            grid-template-columns: 1fr 3fr 1fr;
-            grid-template-rows: 1fr 3fr 5% 5%;
-            grid-template-areas: 
-            "header_1 . header_3"
-            ". middle ."
-            "country country country"
-            "footer_1 footer_2 footer_3";
-        }
+            grid-template-columns: 1% 1fr 3fr 1fr 1%;
+            grid-template-rows: 1% 1fr 3fr 5% 5%;
+            grid-template-areas:
+            ". . . . ." 
+            ". header_1 . header_3 . "
+            ". . middle . ."
+            "country country country country country"
+            "footer_1 footer_1 footer_2 footer_3 footer_3";
+        } 
+        hr {
+                border: 0;
+                clear:both;
+                display:block;
+                width: 96%;                
+                background-color:black;
+                height: 1px;
+            }
+
+
+            #line {
+                float: left;
+                width: 731px;
+                height: 40px;                
+            }
 
         ul {
             list-style-type: none;
             font-size: 30px;
             margin:  0;
             padding: 0;
+            text-align: center;
             
             
         }
@@ -40,6 +56,10 @@
             display: inline-block;
         
         }
+
+        
+
+
 
         a:link{
             color:black;
@@ -52,6 +72,7 @@
 
         .header_1{
             grid-area: header_1;
+            justify-self:left;
         }
 
         .header_3{
@@ -112,6 +133,10 @@
         .country{
             grid-area: country;
             background-color: lightgrey;
+            
+        }
+        #country_id{
+            margin-left:20px;
         }
 
 
@@ -120,24 +145,39 @@
             background-color:lightgrey;
         }
 
+        #bottom_left{
+            margin-left:-53px;
+        }
+
         .footer_2{
             grid-area: footer_2;
-            justify-content:center;
             background-color: lightgrey;
+        }
+
+        #cb_net{
+            margin-left: -65px;
         }
 
         .footer_3{
             grid-area: footer_3;
-            justify-content: flex-end;
             background-color: lightgrey;
         }
+        #bottom_right{
+            margin-right: -180px;
+        }
 
+       #signin{
+           cursor: pointer;
+       }
+
+
+
+  
        
-
 
     </style>
     <body>
-       
+       <div class="wrapper">
             <nav class="header_1">
                 <ul>
                     <li><a href="About">About</a></li>
@@ -146,10 +186,15 @@
             </nav>
             <nav id="header_3" class="header_3">
                 <ul>
-                    <li><a href="Gmail">Gmail</a></li>
-                    <li><a href="Images">Images</a></li>
-                    <li><img id="apps" class="apps" src="apps_black_24dp.svg"></li>
-                    <li><input id="signin" class="signin" type="button" value="Sign in"></li>
+                    <li class="Gmail"><a href="Gmail">Gmail</a></li>
+                    <li class="Images"><a href="Images">Images</a></li>
+                    <li id="app_img"><a href="dummyapps">
+                        <img id="apps" class="apps" src="apps_black_24dp.svg" style="width:40px;height:40px;" >
+                        </a>
+                    </li>
+                    <li class="signin_li">
+                       <a class="signin_a" href="#"> <button id="signin" class="signin" type="button">Sign in</button> </a>
+                    </li>
                 </ul> 
             </nav>
             <main id="middle" class="middle">
@@ -164,18 +209,19 @@
                 </div>
 
             </main>
-            <div id="country" class="country"><p>United Kingdom</p></div>
+            <div id="country" class="country"><p id="country_id">United Kingdom</p></div>
+            <div id="line"><hr  style="" /></div>
         
             <div class="footer_1">
                 <ul>
-                    <li><a href="Advertising">Advertising</a></li>
+                    <li id="bottom_left"><a href="Advertising">Advertising</a></li>
                     <li><a href="Business">Business</a></li>
                     <li><a href="How Search works">How Search works</a></li>
                 </ul> 
             </div>
             <div class="footer_2">
                 <ul>
-                    <li><img id="apps" class="apps" src="carbon.png"></li>
+                    <li id="cb_net"><img id="apps" class="apps" src="carbon.png"></li>
                     <li>Carbon neutral since 2007</li>
                 </ul>
             </div>
@@ -183,11 +229,11 @@
                 <ul>
                     <li><a href="Privacy">Privacy</a></li>
                     <li><a href="Terms">Terms</a></li>
-                    <li><a href="Settings">Settings</a></li>
+                    <li id="bottom_right"><a href="Settings">Settings</a></li>
                 </ul> 
             </div>
             
-
+        </div>
 
         
     
