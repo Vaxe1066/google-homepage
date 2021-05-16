@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <link rel="shortcut icon" href="googleimg.jpg">
+       <link rel="shortcut icon" href="google-icon.svg">
         <title>Google</title>
 
     </head>
@@ -12,46 +12,72 @@
             margin: 0;
         }
 
-        .header{
-            grid-area: header;
-            background-color: #ffff64;
-        }       
 
-        .middle{
-            grid-area: middle;
-            justify-self: center;
-            align-self: center;
-        }
-        
-        .footer{
-            grid-area: footer;
-            background-color: #8ca0ff;
-        }
-
-        .grid-container{
+        body{
             display: grid;
             width: 100%;
             height: 100%;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr 2fr 1fr;
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows: 1fr 3fr 5% 5%;
             grid-template-areas: 
-            "header"
-            "middle"
-            "footer";
+            "header_1 . header_3"
+            ". middle ."
+            "country country country"
+            "footer_1 footer_2 footer_3";
         }
 
-        /*
-        .searchContainer {
-            display: inline-flex;
-            flex: 1 1 300px;
-            position: relative;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            overflow: hidden;
-            }*/
+        ul {
+            list-style-type: none;
+            font-size: 30px;
+            margin:  0;
+            padding: 0;
+            
+            
+        }
 
+        li {
+            font-size: 14px;
+            display: inline-block;
+        
+        }
+
+        a:link{
+            color:black;
+            text-decoration: none;
+        }
+
+        a:hover{
+            text-decoration: underline;
+        }
+
+        .header_1{
+            grid-area: header_1;
+        }
+
+        .header_3{
+            grid-area: header_3;
+            justify-self: end;
+        }
+
+
+        .signin{
+            background-color: mediumblue;
+            color: white;
+            height: 40px;
+            width: 90px;
+            border-radius: 10px;
+        }
+
+        .middle{
+            grid-area: middle;
+            /*justify-self: center;*/
+            
+        }
 
         .search {
+            position: relative;
+            top:12vh;
+            left: 29vh;
             outline: 0;
             height: 15px;
             border-radius: 25px;
@@ -65,9 +91,9 @@
 
 
         .google-image {
-            position: absolute;
-            top: 35vh;
-            left: 82vh;
+            position: relative;
+            top: 8vh;
+            left: 41vh;
         }
         
 
@@ -78,23 +104,55 @@
             position: relative;
             border-radius: 5px;
             gap: 20px;
+            top: 15vh;
+            left: 38vh;
  
             }
 
-
-        .google-search-but{
-            top: 80vh;
-            left: 50px;
+        .country{
+            grid-area: country;
+            background-color: lightgrey;
         }
 
 
+        .footer_1{
+            grid-area: footer_1;
+            background-color:lightgrey;
+        }
+
+        .footer_2{
+            grid-area: footer_2;
+            justify-content:center;
+            background-color: lightgrey;
+        }
+
+        .footer_3{
+            grid-area: footer_3;
+            justify-content: flex-end;
+            background-color: lightgrey;
+        }
+
+       
 
 
     </style>
     <body>
-        <div id="grid-container" class="grid-container">
-            <header id="header" class="header"><p>this is header</p></header>
-            <div id="middle" class="middle">
+       
+            <nav class="header_1">
+                <ul>
+                    <li><a href="About">About</a></li>
+                    <li><a href="Store">Store</a></li>
+                </ul> 
+            </nav>
+            <nav id="header_3" class="header_3">
+                <ul>
+                    <li><a href="Gmail">Gmail</a></li>
+                    <li><a href="Images">Images</a></li>
+                    <li><img id="apps" class="apps" src="apps_black_24dp.svg"></li>
+                    <li><input id="signin" class="signin" type="button" value="Sign in"></li>
+                </ul> 
+            </nav>
+            <main id="middle" class="middle">
                 <img id="google-image" class="google-image" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
                 <div title="search" class="search-container">
                     <!--<img class="search-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" >-->
@@ -104,13 +162,35 @@
                     <input id="google-search-but" class="google-search-but" type="button" value="Google Search">
                     <input id="feelinglucky" class=feelinglucky type="button" value="I'm Feeling Lucky">
                 </div>
-              </div> 
-            <footer id="footer" class="footer"><p>this is footer tag</p></footer>
-        </div>
+
+            </main>
+            <div id="country" class="country"><p>United Kingdom</p></div>
+        
+            <div class="footer_1">
+                <ul>
+                    <li><a href="Advertising">Advertising</a></li>
+                    <li><a href="Business">Business</a></li>
+                    <li><a href="How Search works">How Search works</a></li>
+                </ul> 
+            </div>
+            <div class="footer_2">
+                <ul>
+                    <li><img id="apps" class="apps" src="carbon.png"></li>
+                    <li>Carbon neutral since 2007</li>
+                </ul>
+            </div>
+            <div class="footer_3">
+                <ul>
+                    <li><a href="Privacy">Privacy</a></li>
+                    <li><a href="Terms">Terms</a></li>
+                    <li><a href="Settings">Settings</a></li>
+                </ul> 
+            </div>
+            
 
 
         
-
+    
 
 
     </body>
