@@ -4,29 +4,12 @@
        <link rel="shortcut icon" href="google-icon.svg">
         <title>Google</title>
     </head>
-
     <style>
-        html, body{
-            height: 100%;
-            margin: 0;
+       html, body {
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            color: #222;
         }
-
-
-        .wrapper{
-            display: grid;
-            width: 100%;
-            height: 100%;
-            grid-template-columns: 1% 1fr 3fr 1fr 1%;
-            grid-template-rows: 1% 1fr 3fr 5% 0.1% 5%;
-            grid-template-areas:
-            ". . . . ." 
-            ". header_1 . header_3 . "
-            ". . middle . ."
-            "country country country country country"
-            "line line line line line"
-            "footer_1 footer_1 footer_2 footer_3 footer_3";
-        } 
- 
 
         ul {
             list-style-type: none;
@@ -44,10 +27,6 @@
         
         }
 
-        
-
-
-
         a:link{
             color:black;
             text-decoration: none;
@@ -57,141 +36,100 @@
             text-decoration: underline;
         }
 
-        .header_1{
-            grid-area: header_1;
-            justify-self:left;
-        }
+        header, footer{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
 
-        .header_3{
-            grid-area: header_3;
-            justify-self: end;
         }
 
 
+        header .top_right{
+          display: flex;
+          align-items:center;
+          justify-items: center;
+          margin: 0 0 0 auto;
+          padding-right: 30px;
+        }
 
-        .signin{
-            background-color: mediumblue;
+        header .top_right button{
+            background-color: rgb(44, 148, 212);
             color: white;
             height: 40px;
             width: 90px;
             border-radius: 10px;
         }
 
-        .middle{
-            grid-area: middle;
-            /*justify-self: center;*/
-            
-        }
 
-        .search {
-            position: relative;
-            top:12vh;
-            left: 29vh;
-            outline: 0;
-            height: 15px;
-            border-radius: 25px;
-            flex: 1;
-            background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K');
-            background-position: 10px 10px; 
-            background-repeat: no-repeat;
-            padding: 12px 12px 12px 12px;
-            outline: none;
-            }
 
 
         .google-image {
-            position: relative;
-            top: 8vh;
-            left: 41vh;
+            display: flex;
+            flex-direction:row;
+            justify-content:center;
+            
+
         }
-        
 
-        .button-container {
-            grid-area: middle;
-            display: inline-flex;
-            flex: 1 1 300px;
-            position: relative;
-            border-radius: 5px;
-            gap: 20px;
-            top: 15vh;
-            left: 38vh;
- 
-            }
+        .google-image {
+            display: flex;
+            flex-direction:row;
+            justify-content:center;
+            
 
-        .country{
-            grid-area: country;
-            background-color: lightgrey;
+        }
+
+
+        .search-container{
+            display: flex;
+            flex-direction:row;
+            justify-content:center;
             
         }
-        #country_id{
-            margin-left:20px;
+
+
+        .button-container{
+            display: flex;
+            flex-direction:row;
+            justify-content:center;
+            
         }
 
-        .line{
-            grid-area:line;
-            background-color:grey;
-        }
-
-
-        .footer_1{
-            grid-area: footer_1;
-            background-color:lightgrey;
-        }
-
-        #bottom_left{
-            margin-left:-53px;
-        }
-
-        .footer_2{
-            grid-area: footer_2;
-            background-color: lightgrey;
-        }
-
-        #cb_net{
-            margin-left: -65px;
-        }
-
-        .footer_3{
-            grid-area: footer_3;
-            background-color: lightgrey;
-        }
-        #bottom_right{
-            margin-right: -180px;
-        }
-
-       #signin{
-           cursor: pointer;
-       }
 
 
 
-  
-       
+
+
+
 
     </style>
+
+       
     <body>
-       <div class="wrapper">
-            <nav class="header_1">
-                <ul>
-                    <li><a href="About">About</a></li>
-                    <li><a href="Store">Store</a></li>
-                </ul> 
-            </nav>
-            <nav id="header_3" class="header_3">
-                <ul>
-                    <li class="Gmail"><a href="Gmail">Gmail</a></li>
-                    <li class="Images"><a href="Images">Images</a></li>
-                    <li id="app_img"><a href="dummyapps">
-                        <img id="apps" class="apps" src="apps_black_24dp.svg" style="width:40px;height:40px;" >
-                        </a>
-                    </li>
-                    <li class="signin_li">
-                       <a class="signin_a" href="#"> <button id="signin" class="signin" type="button">Sign in</button> </a>
-                    </li>
-                </ul> 
-            </nav>
-            <main id="middle" class="middle">
-                <img id="google-image" class="google-image" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+            <header>
+                <div class="top_left">
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Store</a></li>
+                    </ul> 
+                </div>  
+                <div class="top_right">
+                    <ul>
+                        <li class="Gmail"><a href="#">Gmail</a></li>
+                        <li class="Images"><a href="#">Images</a></li>
+                        <li id="app_img"><a href="#">
+                            <img id="apps" class="apps" src="apps_black_24dp.svg" style="width:25px;height:25px;" >
+                            </a>
+                        </li>
+                        <li class="signin_li">
+                        <a class="signin_a" href="#"> <button id="signin" class="signin" type="button">Sign in</button> </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </header>
+            <main>
+                <div class="google-image"><img id="google-img" class="google-img" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"></div>
                 <div title="search" class="search-container">
                     <!--<img class="search-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" >-->
                     <input id="search" class="search" type="text" placeholder="" size="50">
@@ -204,28 +142,29 @@
             </main>
             <div id="country" class="country"><p id="country_id">United Kingdom</p></div>
             <div class="line"></div>
-            <div class="footer_1">
-                <ul>
-                    <li id="bottom_left"><a href="Advertising">Advertising</a></li>
-                    <li><a href="Business">Business</a></li>
-                    <li><a href="How Search works">How Search works</a></li>
-                </ul> 
-            </div>
-            <div class="footer_2">
-                <ul>
-                    <li id="cb_net"><img id="apps" class="apps" src="carbon.png"></li>
-                    <li>Carbon neutral since 2007</li>
-                </ul>
-            </div>
-            <div class="footer_3">
-                <ul>
-                    <li><a href="Privacy">Privacy</a></li>
-                    <li><a href="Terms">Terms</a></li>
-                    <li id="bottom_right"><a href="Settings">Settings</a></li>
-                </ul> 
-            </div>
+            <footer>
+                <div class="footer_first">
+                    <ul>
+                        <li id="bottom_left"><a href="Advertising">Advertising</a></li>
+                        <li><a href="Business">Business</a></li>
+                        <li><a href="How Search works">How Search works</a></li>
+                    </ul> 
+                </div>
+                <div class="footer_middle">
+                    <ul>
+                        <li id="cb_net"><img id="apps" class="apps" src="carbon.png"></li>
+                        <li>Carbon neutral since 2007</li>
+                    </ul>
+                </div>
+                <div class="footer_last">
+                    <ul>
+                        <li><a href="Privacy">Privacy</a></li>
+                        <li><a href="Terms">Terms</a></li>
+                        <li id="bottom_right"><a href="Settings">Settings</a></li>
+                    </ul> 
+                </div>
+            </footer>
             
-        </div>
 
         
     
