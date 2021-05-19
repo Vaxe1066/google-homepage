@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
        <link rel="shortcut icon" href="google-icon.svg">
         <title>Google</title>
     </head>
@@ -8,25 +9,24 @@
        html, body {
             font-size: 14px;
             font-family: Arial, sans-serif;
-            color: #222;
+            color: grey;
+            width:100%;
+            overflow: hidden;
+
+
         }
 
-        ul {
-            list-style-type: none;
-            font-size: 30px;
-            margin:  0;
-            padding: 0;
-            text-align: center;
-            
-            
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            min-width: 100vh;
         }
 
-        li {
-            font-size: 14px;
-            display: inline-block;
-        
-        }
 
+        a{
+            color:grey;
+        }
         a:link{
             color:black;
             text-decoration: none;
@@ -36,65 +36,159 @@
             text-decoration: underline;
         }
 
-        header, footer{
-            display: flex;
+        header{
+            display:flex;
             flex-direction: row;
-            justify-content: space-between;
+            
 
         }
 
-
-        header .top_right{
-          display: flex;
-          align-items:center;
-          justify-items: center;
-          margin: 0 0 0 auto;
-          padding-right: 30px;
+        .store{
+            padding-left: 5px;
         }
 
-        header .top_right button{
-            background-color: rgb(44, 148, 212);
+        .top_right{
+            align-items: flex-end;
+            text-align: center;
+            margin: 0 0 0 auto;
+            padding-right: 2%;
+        }
+
+        .Gmail{
+            padding-right: 20px ;
+        }
+        .images{
+            padding-right: 20px ;
+        }
+
+        .apps{
+            align-self: center;
+            justify-self: center;
+            padding-right: 20px ;   
+        }
+        .signin{
+            background-color: mediumblue;
             color: white;
             height: 40px;
             width: 90px;
             border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .bottomall{
+            font-size: 16px;
+            background: #E0E0E0;
+        }
+
+        footer{
+            font-size: 16px;
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            flex: 0 0 100%;
+
+        }
+        hr {
+                border: 0;
+                clear:both;
+                display:block;
+                width: 100%;                
+                background-color:darkgray;
+                height: 1px;
+            }
+
+        .footer_first{
+            align-items: flex-start;
+            /*justify-content: space-between;*/
+        }
+
+        .business{
+            padding-left: 10px;
+        }
+        .searchworks{
+            padding-left: 10px;
         }
 
 
-
-
-        .google-image {
-            display: flex;
-            flex-direction:row;
-            justify-content:center;
-            
-
+        .footer_middle{
+            align-items: center;
+            justify-content: space-around;
+            margin: 0 0 0 auto;
+            padding-right: 7%;
         }
 
-        .google-image {
-            display: flex;
-            flex-direction:row;
-            justify-content:center;
-            
 
+        .footer_last{
+            align-items:flex-end;
+            justify-content: space-around;
+            margin: 0 0 0 auto;
+            padding-right: 2%;
         }
 
+        .privacy{
+            padding-right: 10px;
+        }
+        .terms{
+            padding-right: 10px;
+        }
+
+        main{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+            margin: 0 0 0 0;
+            flex-grow: 1;
+        }
+
+        .google-image{
+            padding-bottom: 80px;
+        }
 
         .search-container{
-            display: flex;
-            flex-direction:row;
-            justify-content:center;
+            padding-bottom: 70px;
+        }
+
+        .search {
+            padding-left: 45px;
+            outline: 0;
+            height: 35px;
+            border-radius: 25px;
+            background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K');
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+        }
+
+        
+        .button-container{
+            padding-bottom: 30px;
             
         }
 
+        .google-search-but, .feelinglucky{
+            cursor:pointer;
+        }
+
+        .google-search-but:hover, .feelinglucky:hover{
+            box-shadow: darkgray;
+           
+        }
+
+/*
+        .google-image{
+            flex:6;
+        }
+
+        .search-container{
+            flex: 1;
+        }
 
         .button-container{
-            display: flex;
-            flex-direction:row;
-            justify-content:center;
-            
+            flex: 1;
+
         }
 
+*/
 
 
 
@@ -106,32 +200,22 @@
 
        
     <body>
+        <body class="wrapper">
             <header>
                 <div class="top_left">
-                    <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Store</a></li>
-                    </ul> 
+                    <a class="about" href="#">About</a>
+                    <a class="store" href="#">Store</a>
                 </div>  
                 <div class="top_right">
-                    <ul>
-                        <li class="Gmail"><a href="#">Gmail</a></li>
-                        <li class="Images"><a href="#">Images</a></li>
-                        <li id="app_img"><a href="#">
-                            <img id="apps" class="apps" src="apps_black_24dp.svg" style="width:25px;height:25px;" >
-                            </a>
-                        </li>
-                        <li class="signin_li">
-                        <a class="signin_a" href="#"> <button id="signin" class="signin" type="button">Sign in</button> </a>
-                        </li>
-                    </ul>
-
+                    <a class="Gmail" href="#" >Gmail</a>
+                    <a class="images" href="#">Images</a>
+                    <a href="#"><img id="apps" class="apps" src="apps_black_24dp.svg" style="width:25px;height:25px;" ></a>
+                    <a class="signin_a" href="#"> <button id="signin" class="signin" type="button">Sign in</button> </a>
                 </div>
             </header>
             <main>
                 <div class="google-image"><img id="google-img" class="google-img" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"></div>
                 <div title="search" class="search-container">
-                    <!--<img class="search-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" >-->
                     <input id="search" class="search" type="text" placeholder="" size="50">
                 </div><br>
                 <div class="button-container">
@@ -140,32 +224,27 @@
                 </div>
 
             </main>
+            <div class="bottomall">
             <div id="country" class="country"><p id="country_id">United Kingdom</p></div>
-            <div class="line"></div>
-            <footer>
-                <div class="footer_first">
-                    <ul>
-                        <li id="bottom_left"><a href="Advertising">Advertising</a></li>
-                        <li><a href="Business">Business</a></li>
-                        <li><a href="How Search works">How Search works</a></li>
-                    </ul> 
-                </div>
-                <div class="footer_middle">
-                    <ul>
-                        <li id="cb_net"><img id="apps" class="apps" src="carbon.png"></li>
-                        <li>Carbon neutral since 2007</li>
-                    </ul>
-                </div>
-                <div class="footer_last">
-                    <ul>
-                        <li><a href="Privacy">Privacy</a></li>
-                        <li><a href="Terms">Terms</a></li>
-                        <li id="bottom_right"><a href="Settings">Settings</a></li>
-                    </ul> 
-                </div>
-            </footer>
+            <div class="hrtag"><hr></div>
+                <footer>
+                    <div class="footer_first">
+                        <a class="advertising" href="#">Advertising</a>
+                        <a class="business" href="#">Business</a>
+                        <a class="searchworks" href="#">How Search works</a>
+                    </div>
+                    <div class="footer_middle">
+                        <p class="cbontext"><img id="cbon" class="cbon" src="carbon.png">Carbon neutral since 2007</p>
+                    </div>
+                    <div class="footer_last">
+                        <a class="privacy" href="#">Privacy</a>
+                        <a class="terms" href="#">Terms</a>
+                        <a class="settings" href="#">Settings</a>
+                    </div>
+                </footer>
+            </div>
             
-
+        </body>
         
     
 
